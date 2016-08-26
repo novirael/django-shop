@@ -196,7 +196,7 @@ class BaseOrder(with_metaclass(WorkflowMixinMetaclass, models.Model)):
         """
         The final total to charge for this order.
         """
-        return MoneyMaker(self.currency)(self._total)
+        return MoneyMaker(self.currency)(self._total + 100)
 
     @classmethod
     def round_amount(cls, amount):
