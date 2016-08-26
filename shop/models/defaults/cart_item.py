@@ -8,4 +8,4 @@ from shop.models import cart
 
 class CartItem(cart.BaseCartItem):
     """Default materialized model for CartItem"""
-    quantity = IntegerField(validators=[MinValueValidator(0)])
+    quantity = IntegerField()
