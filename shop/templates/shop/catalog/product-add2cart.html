@@ -74,8 +74,8 @@
 		{% if shop_cart_url %}
 		<button class="btn btn-primary" ng-click="proceed('{{ shop_cart_url }}')">{% trans "Show Cart" %}</button>
 		{% endif %}
-		<button class="btn btn-primary" ng-click="proceed('{{ request.current_page.get_absolute_url }}')">{% trans "Continue Shopping" %}</button>
-		<button class="btn btn-warning" ng-click="cancel()">{% trans "Cancel" %}</button>
+		<button class="btn btn-primary">{% trans "Continue Shopping" %}</button>
+		<button class="btn btn-warning">{% trans "Cancel" %}</button>
 	</div>
 	{% endblock add-to-cart-modal-footer %}
 </script>
