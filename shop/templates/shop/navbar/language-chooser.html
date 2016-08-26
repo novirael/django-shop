@@ -4,10 +4,12 @@
 	<a class="dropdown-toggle" dropdown-toggle><i class="fa fa-language"></i>&nbsp;{% trans "Language" %} <b class="caret"></b></a>
 	<ul class="dropdown-menu" role="menu">
 	{% for language in languages %}
-		<li{% ifequal current_language language.0 %} class="active"{% endifequal %}>
-			<a href="{% page_language_url language.0 %}" title="{{ language.1 }}">{{ language.1 }}</a>
-		</li>
-	{% endfor %}
+        {% if forloop.counter < 3 %}
+            <li{% ifequal current_language language.0 %} class="active"{% endifequal %}>
+                <a href="{% page_language_url language.0 %}" title="{{ language.1 }}">{{ language.1 }}</a>
+            </li>
+        {% endif %}
+        {% endfor %}
 	</ul>
 </li>
 {% endif %}{% endspaceless %}
