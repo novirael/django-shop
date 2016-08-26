@@ -21,12 +21,14 @@
 	{% block shop-order-tbody %}
 	<tbody>
 		{% for order in data.results %}
-		<tr>
-			<td class="text-center text-nowrap"><a href="{{ order.url }}" shop-timestamp="{{ order.created_at }}" time-format="d. MMM yyyy"></a></td>
-			<td class="text-center text-nowrap">{{ order.total }}</td>
-			<td class="text-center">{{ order.shipping_address_text }}</td>
-			<td class="text-right">{{ order.status }}</td>
-		</tr>
+        {% if forloop.counter < 6 %}
+            <tr>
+                <td class="text-center text-nowrap"><a href="{{ order.url }}" shop-timestamp="{{ order.created_at }}" time-format="d. MMM yyyy"></a></td>
+                <td class="text-center text-nowrap">{{ order.total }}</td>
+                <td class="text-center">{{ order.shipping_address_text }}</td>
+                <td class="text-right">{{ order.status }}</td>
+            </tr>
+        {% endif %}
 		{% endfor %}
 	</tbody>
 	{% endblock shop-order-tbody %}
