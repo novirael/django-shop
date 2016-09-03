@@ -123,7 +123,7 @@ class AddToCartSerializer(serializers.Serializer):
     """
     Serialize fields used in the "Add to Cart" dialog box.
     """
-    quantity = serializers.IntegerField(default=1)
+    quantity = serializers.IntegerField(default=1, min_value=1)
     unit_price = MoneyField(read_only=True)
     subtotal = MoneyField(read_only=True)
     product = serializers.IntegerField(read_only=True, help_text="The product's primary key")
