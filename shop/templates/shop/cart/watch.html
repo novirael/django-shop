@@ -42,10 +42,10 @@
 		<strong ng-bind="cart_item.summary.price"></strong>
 	</td>
 	<td>
-		<button type="button" class="btn btn-xs btn-info btn-block" ng-click="deleteCartItem(cart_item)">
+		<button type="button" class="btn btn-xs btn-info btn-block" ng-click="addCartItem(cart_item)">
 			<span class="glyphicon glyphicon-ok-circle"></span>&nbsp;{% trans "Add to cart" %}
 		</button>
-		<button type="button" class="btn btn-xs btn-danger btn-block" ng-click="addCartItem(cart_item)">
+		<button type="button" class="btn btn-xs btn-danger btn-block" ng-click="deleteCartItem(cart_item)">
 			<span class="glyphicon glyphicon-remove-circle"></span>&nbsp;{% trans "Remove" %}
 		</button>
 	</td>
